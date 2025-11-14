@@ -1,8 +1,8 @@
-# Reflection Cipher
+# Reflection (Atbash) Cipher
 
 require "readline"
 
-puts "Enter alphabet letters one by one as an ordered list, without spaces, or press [enter] to use 26-letter Latin alphabet: "
+puts "Enter alphabet letters one by one as an ordered list, without spaces, or press [enter] to use 26-letter Latin alphabet:"
 alphabet = Readline.readline("➤ ", true).chars
 
 if alphabet.length == 0
