@@ -2,8 +2,12 @@
 
 require "readline"
 
-puts "Enter alphabet letters one by one as an ordered list, no spaces:"
+puts "Enter alphabet letters one by one as an ordered list, without spaces, or press [enter] to use 26-letter Latin alphabet: "
 alphabet = Readline.readline("➤ ", true).chars
+
+if alphabet.length == 0
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+end
 
 puts
 
@@ -29,19 +33,19 @@ message = Readline.readline("➤ ", true).chars
 
 puts
 
-puts "The enciphered message:"
+puts "Enciphered message:"
 print "➤ "
 enciphered_message = []
 
 for character in message do
-    enciphered_message.push(alphabet_atbash_map[character.to_s])
-    print alphabet_atbash_map[character.to_s]
+    enciphered_message.push(alphabet_atbash_map[character.to_s.upcase])
+    print alphabet_atbash_map[character.to_s.upcase]
 end
 
 puts
 puts
 
-puts "The deciphered message:"
+puts "Deciphered message:"
 print "➤ "
 deciphered_message = []
 
